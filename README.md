@@ -3,7 +3,7 @@ Extensions and Scripts to complement self-hosted [OSTicket.](http://www.osticket
 
 ### Ticket Automation
 
-In the "automation" directory are 2 php scripts for automating ticket creating.
+In the "automation" directory are 2 php scripts for automating ticket creation.
 
 Creating a ticket from the command line:
 
@@ -17,7 +17,7 @@ Automatically scheduling ticket creation:
 ```
 This script is called from CRON to create tickets automatically on a schedule (eg daily, weekly, monthly, etc). Ticket subjects and messges are maintained in OSTicket's Knowledge-Base as an FAQ.
 
-[See her for further information and setup tutorial.](http://smart-itc.com.au/osticket-automatic-scheduled-tickets/)
+[See here for further information and setup tutorial.](http://smart-itc.com.au/osticket-automatic-scheduled-tickets/)
 
 ### Simple HTML Reporting
 
