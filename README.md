@@ -1,7 +1,7 @@
 # osTicket-extensions
 Extensions and Scripts to complement self-hosted [OSTicket.](http://www.osticket.com)
 
-### Ticket Automation
+## Ticket Automation
 
 In the "automation" directory are 2 php scripts for automating ticket creation.
 
@@ -19,7 +19,19 @@ This script is called from CRON to create tickets automatically on a schedule (e
 
 [See here for further information and setup tutorial.](http://smart-itc.com.au/osticket-automatic-scheduled-tickets/)
 
-### Simple HTML Reporting
+## Troubleshooting
+
+
+**Unable to create ticket with subject: [_subject_]**
+
+Ticket creation has failed. The likely cause is because the script could not reach your OSTicket API URL. Check the  **$settings array** key **apiURL**.
+
+**Unable to create ticket with subject [_subject_]: Valid API key required**
+
+The script found the OSTicket API URL but failed because the provided API Key was incorrect. Check the  **$settings array** key **apiKey**. Also check the API Keys page in OSTicket for the correct APIKey and IP Address.
+
+
+## Simple HTML Reporting
 
 A simple HTML managerial report to report on open and closed tickets.
 
