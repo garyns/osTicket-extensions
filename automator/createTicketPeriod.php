@@ -65,7 +65,7 @@ function findTicketsToCreate($period = "daily") {
         die('Could not connect: ' . mysql_error());
     }
     
-    $sql_query = "select faq_id, answer from " . $settings['dbTable'] . " WHERE category_id=" . $settings['categoryId'] . " AND UPPER(question) LIKE '%$period%'";
+    $sql_query = "select faq_id, answer from " . $settings['dbTable'] . " WHERE category_id=" . $settings['categoryId'] . " AND UPPER(question) LIKE UPPER('%$period%')";
     
     $sql_result = mysql_query($sql_query, $link);
     
