@@ -28,7 +28,7 @@ Parts of this script were inspired from jared@osTicket.com / ntozier@osTicket / 
 
 $settings = array(
   'dbHost' => 'localhost',
-  'dbTable' => 'ost.ost_faq', // Database.Table were FAQs are stored
+  'dbTable' => 'ost.ost_faq', // Database.Table where FAQs are stored
   'dbUser' => 'root',
   'dbPass' => '',
   'categoryId' => 16, // The Category ID where Automator tickete FAQs are kept
@@ -82,29 +82,14 @@ function createTicket($subject, $message = null) {
     'subject'   =>      $subject,  
     'message'   =>      $message,  
     'ip'        =>      $reporterIP,
-    'topicId'   =>      $topicId, 
-    //'Agency'  =>		'58', //this is an example of a custom list entry. This should be the number of the entry.
-    //'Site'	=>		'Bermuda'; // this is an example of a custom text field.  You can push anything into here you want.	
-    'attachments' => array()
+    'topicId'   =>      $topicId
   );
 
-  # more fields are available and are documented at:
-  # https://github.com/osTicket/osTicket-1.8/blob/develop/setup/doc/api/tickets.md
-
-  # Add in attachments here if necessary
-  //$data['attachments'][] =
-  //array('file.txt' =>
-  //        'data:text/plain;base64;'
-  //            .base64_encode(file_get_contents('/file.txt')));  // replace ./file.txt with /path/to/your/test/filename.txt
-
-  #pre-checks
   function_exists('curl_version') or die('CURL support required');
   function_exists('json_encode') or die('JSON support required');
 
-  #set timeout
   set_time_limit(30);
 
-  #curl post
   $ch = curl_init();
   curl_setopt($ch, CURLOPT_URL, $settings['apiURL']);
   curl_setopt($ch, CURLOPT_POST, 1);
