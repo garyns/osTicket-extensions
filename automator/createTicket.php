@@ -27,10 +27,6 @@ Parts of this script were inspired from jared@osTicket.com / ntozier@osTicket / 
 */
 
 $settings = array(
-  'dbHost' => 'localhost',
-  'dbTable' => 'ost.ost_faq', // Database.Table where FAQs are stored
-  'dbUser' => 'root',
-  'dbPass' => '',
   'categoryId' => 16, // The Category ID where Automator tickete FAQs are kept
   'topicId' => 8, // Created tickets are assigned to this topic.
   'subjectPrefix' => '[',
