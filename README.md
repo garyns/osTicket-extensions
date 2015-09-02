@@ -1,6 +1,8 @@
 # osTicket-extensions
 Extensions and Scripts to complement self-hosted [OSTicket.](http://www.osticket.com)
 
+Tested against OSTicket 1.8
+
 ## Ticket Automation
 
 In the "automation" directory are 2 php scripts for automating ticket creation.
@@ -19,7 +21,7 @@ This script is called from CRON to create tickets automatically on a schedule (e
 
 [See here for further information and setup tutorial.](http://smart-itc.com.au/osticket-automatic-scheduled-tickets/)
 
-## Troubleshooting
+### Troubleshooting
 
 
 **Unable to create ticket with subject: [_subject_]**
@@ -33,6 +35,26 @@ The script found the OSTicket API URL but failed because the provided API Key wa
 
 ## Simple HTML Reporting
 
-A simple HTML managerial report to report on open and closed tickets.
+A simple HTML managerial report to report on open and closed tickets. [Here is a screen shot](http://smart-itc.com.au/wp-content/uploads/2015/09/GITHubOSTicketReport.jpg) Yep, it's not pretty!
 
-*Coming soon.*
+
+#### Background
+
+These scripts were created to provide a client with some basic managerial reporting of tickets. There are 2 scripts:
+
+**reportrt.php** *Internal* real-time reporting from the OSTicket database. Used to help manage and report tickets internally and prepair the managerial report. It reports on all tickets.
+
+**report.php** *Managerial* report for last month. It contains less information than the internal report, plus tickets from the current month are excluded. So, to generate a managerial report for August, the report is generated in September.
+
+The last comment/post in a ticket is what appears in the "Last Comment" column. The process adopted was for staff to review open tickets at the end of the month (or early in the next month), and post an internal 1 line progress comment for the report (a convention was adopted to suffix the comment with '(eom)' as seen in the the [screen shot](http://smart-itc.com.au/wp-content/uploads/2015/09/GITHubOSTicketReport.jpg)).
+
+#### Setup
+
+* The code is contained in the reports directory. This directory needs to be uploaded to your web server and made accessable via a URL.
+* Edit **report.inc.php** to setup database connection details.
+* Import the SQL in **viewsCreate.sql** into your OSTicket database. The PHP scripts use these views. Note that the SQL assumes an **ost_** prefix on tables. Edit the SQL to match your deployment.
+* You can add your own SQL to the report.php, etc scripts to suite your needs.
+
+#### Using
+* Browse to a report. Eg http://ost.yourdomain.com/reports/report.php
+
