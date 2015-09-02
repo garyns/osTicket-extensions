@@ -119,7 +119,7 @@ function createTicket($subject, $message = null) {
   curl_close($ch);
 
   if ($code != 201) {
-    echo 'Unable to create ticket with subject $subject: '.$result . "\n";
+    echo "Unable to create ticket with subject $subject: " .$result . "\n";
     return false;
   }
 
