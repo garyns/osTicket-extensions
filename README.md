@@ -1,5 +1,9 @@
 # osTicket-extensions
-Extensions and Scripts to complement self-hosted [OSTicket.](http://www.osticket.com)
+Extensions and Scripts to complement self-hosted [OSTicket.](http://www.osticket.com) They include:
+
+* Automatically schedule and create tickets.
+* Process #hashtags in ticket notes and comments.
+* Simple managerial ticket report
 
 Tested against OSTicket 1.8
 
