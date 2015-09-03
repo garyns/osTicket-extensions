@@ -58,3 +58,44 @@ The last comment/post in a ticket is what appears in the "Last Comment" column. 
 #### Using
 * Browse to a report. Eg http://ost.yourdomain.com/reports/report.php
 
+## Ticket #hashtags
+
+Process #hashtags in ticket notes/comments.
+
+The script **hashtag/processTags.php** processes the last thread entry for open tickets and looks for hashtags, eg "#WOC" (WOC = Wait On Client).
+
+Typically you would call this script from CRON:
+```
+* * * * * php /path-to-script/processTags.php > /dev/null
+```
+
+**processTags.php** then looks for an external PHP file to process the ticket. Eg, **tag-WOC.php**
+
+In the hasthag folder there are some example processing scripts:
+
+* **tag-WOC.php** update a custom OSTicket Field "TicketStatus" to read "Wait On Client".
+* **tag-NORMAL.php** update a custom OSTicket Field "TicketStatus" to be null.
+* **tag-STATUS.php** update a custom OSTicket Field "TicketStatus" to arbitary text.
+
+---
+**Here is tag-STATUS.php in action**
+
+It uses a custom ticket field called "Ticket Status", set up like this in osTicket:
+![](http://take.ms/H8ClQ)
+
+
+1 User posts a note with #STATUS and text to a ticket.
+
+![](http://take.ms/Db0R3)
+
+2 After note added
+
+![](http://take.ms/e9eSe)
+
+3 Moments later (when processTags.php called by CRON)
+
+![](http://take.ms/kQZTh)
+
+4 Ticket List (*this is a customisation to show Ticket Status on the ticket list*)
+
+![](http://take.ms/xApAv)
