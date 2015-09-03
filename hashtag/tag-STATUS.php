@@ -6,8 +6,6 @@
 
   $sql = "UPDATE ost_ticket__cdata SET TicketStatus='$body2' WHERE ticket_id=$ticketId;";
   $result = mysql_query($sql, $link);
-
-  update_thread($ticketId, $threadId, "<strike>$hashtag</strike>\nTicketStatus Now \'$body2\'");
-  //post_ticket_note($ticketId, "TicketStatus Now \'Wait On Client\'");
-
   echo $result ? "OK" : "ERROR: " . mysql_error($link);
+  
+  update_thread($ticketId, $threadId, "<strike>$hashtag</strike>\nTicketStatus Now \'$body2\'");

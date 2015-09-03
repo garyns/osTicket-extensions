@@ -8,6 +8,6 @@
   $result = mysql_query($sql, $link);
 
   $newBody = str_ireplace("#$hashtag", "<strike>$hashtag</strike> TicketStatus Now \'Wait On Client\'", $body);
-  update_thread($ticketId, $threadId, $newBody);
-
   echo $result ? "OK" : "ERROR: " . mysql_error($link);
+  
+  update_thread($ticketId, $threadId, $newBody);
