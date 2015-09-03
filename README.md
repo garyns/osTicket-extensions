@@ -99,3 +99,8 @@ It uses a custom ticket field called "Ticket Status", set up like this in osTick
 4 Ticket List (*this is a customisation to show Ticket Status on the ticket list*)
 
 ![](http://take.ms/xApAv)
+
+#### Setup
+
+* Update the variable **$settings** in **processTags.php** with your database settings.
+* **processTags.php** needs a custom view called "tickets_last_entry". The SQL to create this view is contained in the file **reports/viewsCreate.sql**
