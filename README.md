@@ -80,11 +80,13 @@ In the hasthag folder there are some example processing scripts:
 * **tag-WOC.php** update a custom OSTicket Field "TicketStatus" to read "Wait On Client".
 * **tag-NORMAL.php** update a custom OSTicket Field "TicketStatus" to be null.
 * **tag-STATUS.php** update a custom OSTicket Field "TicketStatus" to arbitary text.
+* **tag-SUBJECT.php** update the ticket subject.
 
 ---
 **Here is tag-STATUS.php in action**
 
-It uses a custom ticket field called "Ticket Status", set up like this in osTicket:
+**tag-STATUS.php** uses a custom ticket field called "Ticket Status", set up like this in osTicket:
+
 ![](http://take.ms/H8ClQ)
 
 
@@ -103,6 +105,8 @@ It uses a custom ticket field called "Ticket Status", set up like this in osTick
 4 Ticket List (*this is a customisation to show Ticket Status on the ticket list*)
 
 ![](http://take.ms/xApAv)
+
+Note: **tag-SUBJECT.php** works similarly, excepts it updates the ticket subject field, which is a core osTicket field, not a custom field.
 
 #### Setup
 
