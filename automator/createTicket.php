@@ -27,7 +27,6 @@ Parts of this script were inspired from jared@osTicket.com / ntozier@osTicket / 
 */
 
 $settings = array(
-  'categoryId' => 16, // The Category ID where Automator tickete FAQs are kept
   'topicId' => 8, // Created tickets are assigned to this topic.
   'subjectPrefix' => '[',
   'subjectSuffix' => ']',

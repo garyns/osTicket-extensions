@@ -137,8 +137,8 @@ function process_hash_tag($ticketId, $threadId, $body, $hashtag) {
  */
 function post_ticket_note($ticketId, $note) {
   global $link, $settings;
-
-  $sql = "INSERT INTO " . $settings['dbTablePrefix'] . "ticket_thread (ticket_id, pid, staff_id, user_id, thread_type, source, title, body, format, ip_address, created, updated) VALUES ($ticketId, 0, 0, 0, 'N', 'TagProcessor', NULL, '$note', 'html', '', NOW(), NOW());";
+  
+  $sql = "INSERT INTO " . $settings['dbTablePrefix'] . "ticket_thread (ticket_id, pid, staff_id, user_id, thread_type, source, title, body, format, ip_address, created, updated) VALUES ($ticketId, 0, 0, 0, 'N', 'TagProcessor', NULL, '" . mysql_escape_string(nl2br($note)) . "', 'html', '', NOW(), NOW());";
 
   $result = mysql_query($sql, $link);
 
@@ -156,7 +156,7 @@ function post_ticket_note($ticketId, $note) {
 function update_thread($ticketId, $threadId, $note) {
   global $link, $settings;
 
-  $sql = "UPDATE " . $settings['dbTablePrefix'] . "ticket_thread SET body='" . nl2br($note) . "', updated=NOW() WHERE id=$threadId;";
+  $sql = "UPDATE " . $settings['dbTablePrefix'] . "ticket_thread SET body='" . mysql_escape_string(nl2br($note)) . "', updated=NOW() WHERE id=$threadId;";
 
   $result = mysql_query($sql, $link);
 
