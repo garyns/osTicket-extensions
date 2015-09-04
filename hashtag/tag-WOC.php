@@ -7,7 +7,7 @@
   $sql = "UPDATE ost_ticket__cdata SET TicketStatus='Wait On Client' WHERE ticket_id=$ticketId;";
   $result = mysql_query($sql, $link);
 
-  $newBody = str_ireplace("#$hashtag", "<strike>$hashtag</strike> TicketStatus Now \'Wait On Client\'", $body);
+  $newBody = str_ireplace("#$hashtag", "<strike>$hashtag</strike> TicketStatus Now 'Wait On Client'", $body);
   echo $result ? "OK" : "ERROR: " . mysql_error($link);
   
   update_thread($ticketId, $threadId, $newBody);

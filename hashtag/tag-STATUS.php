@@ -8,4 +8,4 @@
   $result = mysql_query($sql, $link);
   echo $result ? "OK" : "ERROR: " . mysql_error($link);
   
-  update_thread($ticketId, $threadId, "<strike>$hashtag</strike>\nTicketStatus Now \'$body2\'");
+  update_thread($ticketId, $threadId, "<strike>$hashtag</strike>\nTicketStatus Now '$body2'");
