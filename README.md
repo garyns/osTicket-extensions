@@ -87,7 +87,7 @@ In the hasthag folder there are some example processing scripts:
 
 **tag-STATUS.php** uses a custom ticket field called "Ticket Status", set up like this in osTicket:
 
-![](http://take.ms/H8ClQ)
+![image](http://take.ms/H8ClQ)
 
 
 1 User posts a note with #STATUS and text to a ticket.
