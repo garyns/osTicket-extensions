@@ -23,7 +23,7 @@ Automatically scheduling ticket creation:
 ```
 This script is called from CRON to create tickets automatically on a schedule (eg daily, weekly, monthly, etc). Ticket subjects and messges are maintained in OSTicket's Knowledge-Base as an FAQ.
 
-[See here for further information and setup tutorial.](http://smart-itc.com.au/osticket-automatic-scheduled-tickets/)
+[See here for further information and setup tutorial.](http://garysmart.com.au/osticket-automatic-scheduled-tickets/)
 
 ### Troubleshooting
 
@@ -39,7 +39,7 @@ The script found the OSTicket API URL but failed because the provided API Key wa
 
 ## Simple HTML Reporting
 
-A simple HTML managerial report to report on open and closed tickets. [Here is a screen shot](http://smart-itc.com.au/wp-content/uploads/2015/09/GITHubOSTicketReport.jpg) Yep, it's not pretty!
+A simple HTML managerial report to report on open and closed tickets. [Here is a screen shot](assets/report.jpg).
 
 
 #### Background
@@ -79,7 +79,7 @@ In the hasthag folder there are some example processing scripts:
 
 * **tag-WOC.php** update a custom OSTicket Field "TicketStatus" to read "Wait On Client".
 * **tag-NORMAL.php** update a custom OSTicket Field "TicketStatus" to be null.
-* **tag-STATUS.php** update a custom OSTicket Field "TicketStatus" to arbitary text.
+* **tag-STATUS.php** update a custom OSTicket Field "TicketStatus" to arbitrary text.
 * **tag-SUBJECT.php** update the ticket subject.
 
 ---
@@ -87,24 +87,24 @@ In the hasthag folder there are some example processing scripts:
 
 **tag-STATUS.php** uses a custom ticket field called "Ticket Status", set up like this in osTicket:
 
-![image](http://take.ms/H8ClQ)
+![](assets/hashtag0.jpg)
 
 
 1 User posts a note with #STATUS and text to a ticket.
 
-![](http://take.ms/Db0R3)
+![](assets/hashtag1.jpg)
 
 2 After note added
 
-![](http://take.ms/e9eSe)
+![](assets/hashtag2.jpg)
 
 3 Moments later (when processTags.php called by CRON)
 
-![](http://take.ms/kQZTh)
+![](assets/hashtag3.jpg)
 
 4 Ticket List (*this is a customisation to show Ticket Status on the ticket list*)
 
-![](http://take.ms/xApAv)
+![](assets/hashtag4.jpg)
 
 Note: **tag-SUBJECT.php** works similarly, excepts it updates the ticket subject field, which is a core osTicket field, not a custom field.
 
