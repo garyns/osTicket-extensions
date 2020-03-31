@@ -1,4 +1,10 @@
 # osTicket-extensions
+
+**PLEASE NOTE:** This code was written for and tested against OSTicket 1.6 and is currencly unmaintained.
+I have received notifications that this code does not work with OSTicket 1.10 due to schema changes.
+
+
+
 Extensions and Scripts to complement self-hosted [OSTicket.](http://www.osticket.com) They include:
 
 * Automatically schedule and create tickets.
